@@ -45,13 +45,10 @@
           text: "稱呼：" + $('#customer').val()
         },{
           type: 'text',
-          text: "導遊：" + $('#guide').val()
-        },{
-          type: 'text',
           text: "出遊日期：" + $('#godate').val()
         },{
           type: 'text',
-          text: "預約詳細資料：" + $('#book').val()
+          text: "詳細內容：" + $('#book').val()
         }]).then(function () {
           liff.closeWindow();
         });
@@ -123,16 +120,6 @@
             <div class="row">
               <div class="input-field col s10 push-s1">
                 <i class="material-icons prefix">mode_edit</i>
-				<input type="text" name="guide" id="guide" class="form-control">
-                <label for="godate">想預約的導遊</label>
-              </div>
-            </div>
-          
-        </div><div class="row">
-          
-            <div class="row">
-              <div class="input-field col s10 push-s1">
-                <i class="material-icons prefix">mode_edit</i>
 				<input type="text" name="godate" id="godate" class="datepicker">
                 <label for="backdate">出遊日期</label>
               </div>
@@ -144,7 +131,7 @@
               <div class="input-field col s10 push-s1">
                 <i class="material-icons prefix">mode_edit</i>
 				<input type="text" name="book" id="book" class="form-control">
-                <label for="backdate">預約詳細資料</label>
+                <label for="backdate">預約詳細內容</label>
               </div>
             </div>
           
