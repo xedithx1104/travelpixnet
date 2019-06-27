@@ -38,20 +38,28 @@
 		function initializeApp(data) {
       
 			//document.getElementById('userid').innerHTML = data.context.userId;
-      
-      document.getElementById('datasend2').addEventListener('click', function () {
+      document.getElementById('datasend').addEventListener('click', function () {
         liff.sendMessages([{
           type: 'text',
           text: "稱呼：" + $('#customer').val()
         },{
           type: 'text',
+          text: "連絡電話：" + $('#phone').val()
+        }])
+	form1.style.display='none';
+	form2.style.display='';
+      });
+      document.getElementById('datasend2').addEventListener('click', function () {
+        liff.sendMessages([{
+          type: 'text',
           text: "出遊日期：" + $('#godate').val()
         },{
           type: 'text',
-          text: "詳細內容：" + $('#book').val()
+          text: "詳細預約內容：" + $('#book').val()
         }]).then(function () {
           liff.closeWindow();
         });
+		
       });
     }
 	
@@ -104,46 +112,71 @@
           </div>
         </div>
         
-
-        <div class="row">
-          
-            <div class="row">
-              <div class="input-field col s10 push-s1">
-                <i class="material-icons prefix">mode_edit</i>
-				<input type="text" name="customer" id="customer" class="form-control">
-                <label for="godate">稱呼</label>
-              </div>
-            </div>
-          
-        </div><div class="row">
-          
-            <div class="row">
-              <div class="input-field col s10 push-s1">
-                <i class="material-icons prefix">mode_edit</i>
-				<input type="text" name="godate" id="godate" class="datepicker">
-                <label for="backdate">出遊日期</label>
-              </div>
-            </div>
-          
-        </div><div class="row">
-          
-            <div class="row">
-              <div class="input-field col s10 push-s1">
-                <i class="material-icons prefix">mode_edit</i>
-				<input type="text" name="book" id="book" class="form-control">
-                <label for="backdate">預約詳細內容</label>
-              </div>
-            </div>
-          
-        </div>
-          
-        <div class="row">
-          <div class="col s10 push-s1">
-            <button type="button" id="datasend2" class="btn waves-effect waves-light">確認
-		      <i class="material-icons right">send</i>
-            </button>
-           </div>
-         </div>
+        <div id="form1" style="display:">
+			<div class="row">
+			  
+				<div class="row">
+				  <div class="input-field col s10 push-s1">
+					<i class="material-icons prefix">mode_edit</i>
+					<input type="text" name="customer" id="customer" class="form-control">
+					<label for="customer">稱呼</label>
+				  </div>
+				</div>
+			  
+			</div><div class="row">
+			  
+				<div class="row">
+				  <div class="input-field col s10 push-s1">
+					<i class="material-icons prefix">mode_edit</i>
+					<input type="text" name="phone" id="phone" class="form-control">
+					<label for="phone">連絡電話</label>
+				  </div>
+				</div>
+			  
+			</div><div class="row">
+			  
+			  <div class="col s10 push-s1">
+				<button type="button" id="datasend" class="btn waves-effect waves-light">下一頁
+				  <i class="material-icons right">send</i>
+				</button>
+			   </div>
+			 
+			</div>
+		</div>
+		
+		
+		<div id="form2" style="display:none">
+			<div class="row">
+			  
+				<div class="row">
+				  <div class="input-field col s10 push-s1">
+					<i class="material-icons prefix">mode_edit</i>
+					<input type="text" name="godate" id="godate" class="datepicker">
+					<label for="godate">出遊日期</label>
+				  </div>
+				</div>
+			  
+			</div><div class="row">
+			  
+				<div class="row">
+				  <div class="input-field col s10 push-s1">
+					<i class="material-icons prefix">mode_edit</i>
+					<input type="text" name="book" id="book" class="form-control">
+					<label for="book">詳細預約內容</label>
+				  </div>
+				</div>
+			  
+			</div>
+			
+			  
+			<div class="row">
+			  <div class="col s10 push-s1">
+				<button type="button" id="datasend2" class="btn waves-effect waves-light">確認
+				  <i class="material-icons right">send</i>
+				</button>
+			   </div>
+			</div>
+		</div>
 		<br><br>
       </form>
 	</div>  
